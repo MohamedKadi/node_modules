@@ -27,6 +27,8 @@ function askName() {
   readline.question('Your name? ', (msg) => {
     if (msg === 'sda3') {
       eventEmitter.emit(msg);
+      readline.close();
+      return;
     }
     if (msg === 'quit') {
       readline.close();
