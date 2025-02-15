@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "task": "Buy groceries",
+    "completed": false,
+    "priority": "High",
+    "dueDate": "2025-02-20"
+  },
+  {
+    "id": 2,
+    "task": "Finish Node.js project",
+    "completed": true,
+    "priority": "Medium",
+    "dueDate": "2025-02-18"
+  },
+  {
+    "id": 3,
+    "task": "Call mom",
+    "completed": false,
+    "priority": "High",
+    "dueDate": "2025-02-15"
+  },
+  {
+    "id": 4,
+    "task": "Read a book",
+    "completed": true,
+    "priority": "Low",
+    "dueDate": "2025-02-25"
+  },
+  {
+    "id": 5,
+    "task": "Workout for 30 minutes",
+    "completed": false,
+    "priority": "Medium",
+    "dueDate": "2025-02-16"
+  },
+  {
+    "task": "ToDoApp",
+    "priority": "Hard",
+    "dueDate": "2025-02-15",
+    "completed": false,
+    "id": 6
+  },
+  {
+    "task": "todo App",
+    "priority": "Medium",
+    "dueDate": "2025-01-22",
+    "completed": false,
+    "id": 7
+  },
+  {
+    "task": "working out",
+    "priority": "High",
+    "dueDate": "2025-02-11",
+    "completed": false,
+    "id": 8
+  },
+  {
+    "task": "something",
+    "priority": "Low",
+    "dueDate": "2025-03-01",
+    "completed": false,
+    "id": 9
+  }
+]
