@@ -52,6 +52,18 @@ async function ToDoApp() {
       });
       console.log('added successfully');
     }
+    if (num === '2') {
+      const fichier = fs.readFileSync('./data.json', 'utf-8');
+      var arr = JSON.parse(fichier);
+      for (let i = 0; i < arr.length; i++) {
+        console.log(i + 1 + ' - ' + arr[i].task);
+      }
+      var deleted = await askQuestion('which task you want to delete: \n');
+      const newArr = arr.slice(0, deleted - 1).concat(arr.slice(deleted));
+      fs.writeFileSync('./data.json', JSON.stringify(newArr, null, 2));
+
+      console.log('deleted successfully');
+    }
     if (num === '4') {
       readline.close();
       return;
