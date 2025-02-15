@@ -64,6 +64,28 @@ async function ToDoApp() {
 
       console.log('deleted successfully');
     }
+    if (num === '3') {
+      const fichier = fs.readFileSync('./data.json', 'utf-8');
+      var arr = JSON.parse(fichier);
+      for (let i = 0; i < arr.length; i++) {
+        console.log(i + 1 + ' - ' + arr[i].task);
+      }
+      var edited = await askQuestion('which task you want to edit: \n');
+      arr[edited - 1].task = await askQuestion(
+        `task name: (current: "${arr[edited - 1].task}")\n`
+      );
+      arr[edited - 1].priority = await askQuestion(
+        `task priority: (current: "${arr[edited - 1].priority}")\n`
+      );
+      arr[edited - 1].dueDate = await askQuestion(
+        `task dueDate: (current: "${arr[edited - 1].dueDate}")\n`
+      );
+      arr[edited - 1].completed = await askQuestion(
+        `task completed: (current: "${arr[edited - 1].completed}")\n`
+      );
+      fs.writeFileSync('./data.json', JSON.stringify(arr, null, 2));
+      console.log('edited successfully');
+    }
     if (num === '4') {
       readline.close();
       return;

@@ -56,10 +56,10 @@
     "id": 8
   },
   {
-    "task": "something",
-    "priority": "Low",
-    "dueDate": "2025-03-01",
-    "completed": false,
+    "task": "edited something",
+    "priority": "Medium",
+    "dueDate": "2025-03-02",
+    "completed": "false",
     "id": 9
   }
 ]
