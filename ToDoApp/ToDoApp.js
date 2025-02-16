@@ -55,6 +55,10 @@ async function ToDoApp() {
     if (num === '2') {
       const fichier = fs.readFileSync('./data.json', 'utf-8');
       var arr = JSON.parse(fichier);
+      if (arr.length === 0) {
+        console.log('there is nothing! to edit');
+        return;
+      }
       for (let i = 0; i < arr.length; i++) {
         console.log(i + 1 + ' - ' + arr[i].task);
       }
@@ -67,6 +71,10 @@ async function ToDoApp() {
     if (num === '3') {
       const fichier = fs.readFileSync('./data.json', 'utf-8');
       var arr = JSON.parse(fichier);
+      if (arr.length === 0) {
+        console.log('there is nothing! to edit');
+        return;
+      }
       for (let i = 0; i < arr.length; i++) {
         console.log(i + 1 + ' - ' + arr[i].task);
       }
@@ -74,11 +82,20 @@ async function ToDoApp() {
       arr[edited - 1].task = await askQuestion(
         `task name: (current: "${arr[edited - 1].task}")\n`
       );
-      arr[edited - 1].priority = await askQuestion(
-        `task priority: (current: "${arr[edited - 1].priority}")\n`
+      const prorietyL = await askQuestion(
+        `task priority: choose 1-Low, 2-Medium 3-High (current: "${
+          arr[edited - 1].priority
+        }")\n`
       );
+      if (prorietyL === '1') {
+        arr[edited - 1].priority = 'Low';
+      } else if (prorietyL === '2') {
+        arr[edited - 1].priority = 'Medium';
+      } else {
+        arr[edited - 1].priority = 'High';
+      }
       arr[edited - 1].dueDate = await askQuestion(
-        `task dueDate: (current: "${arr[edited - 1].dueDate}")\n`
+        `task dueDate yyyy/MM/dd: (current: "${arr[edited - 1].dueDate}")\n`
       );
       arr[edited - 1].completed = await askQuestion(
         `task completed: (current: "${arr[edited - 1].completed}")\n`
